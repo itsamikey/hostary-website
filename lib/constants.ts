@@ -142,14 +142,15 @@ export const FEATURES = [
   },
   {
     id: "streaming",
-    title: "Streaming Apps",
-    description: "One-click access to Netflix, YouTube, and all popular streaming services.",
+    title: "Streaming Apps with Auto-Reset",
+    description: "Guests enjoy their favorite streaming apps, and all accounts automatically log out on checkout. No more awkward calls about forgotten Netflix logins.",
     icon: "Tv",
     details: [
-      "Pre-configured popular apps",
-      "Netflix, YouTube, Prime Video, and more",
-      "Custom app support",
-      "Easy navigation for guests",
+      "Automatic logout on guest checkout",
+      "All streaming app data cleared between guests",
+      "Netflix, YouTube, Prime Video, Disney+, and more",
+      "Guests' accounts stay private and secure",
+      "No manual resets needed - fully automated",
     ],
   },
   {
@@ -181,16 +182,16 @@ export const FEATURES = [
 
 export const FAQ_ITEMS = [
   {
-    question: "What's included in the free trial?",
-    answer: "The 14-day free trial includes full access to all features in your selected plan. No credit card required to start.",
+    question: "How does the automatic streaming app reset work?",
+    answer: "When a guest checks out, Hostary automatically clears all streaming app data - including Netflix, Disney+, and other logins. The next guest arrives to a fresh TV with no trace of previous accounts. No manual intervention needed.",
+  },
+    {
+    question: "What device do I need?",
+    answer: "Hostary uses pre-configured streaming devices that plug into your TV's HDMI port. Devices are $59 each with free shipping to the contiguous US. Annual plans include free devices - or you can purchase them separately anytime.",
   },
   {
-    question: "Can I use my own Android TV?",
-    answer: "Yes! Hostary works with any Android TV device running Android 9 or later. We also sell pre-configured devices if you prefer a plug-and-play solution.",
-  },
-  {
-    question: "How do I pair a device?",
-    answer: "Download our TV app, enter the 6-digit pairing code shown on your TV into the admin dashboard, and the device will be linked to your property instantly.",
+    question: "How do I set up a device?",
+    answer: "Plug the Hostary device into your TV, connect it to your property's WiFi, and enter the 6-digit pairing code shown on screen into your admin dashboard. The device links to your property instantly and displays your guest dashboard.",
   },
   {
     question: "Can I cancel anytime?",

@@ -135,7 +135,7 @@ export default function PricingPage() {
                           : "/contact"
                       }
                     >
-                      {plan.monthlyPrice ? "Start Free Trial" : "Contact Sales"}
+                      {plan.monthlyPrice ? "Get Started" : "Contact Sales"}
                     </Link>
                   </Button>
                 </CardFooter>
@@ -149,16 +149,16 @@ export default function PricingPage() {
       <section className="bg-muted/30 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold">Need Additional Devices?</h2>
+            <h2 className="text-2xl font-bold">Hostary Devices</h2>
             <p className="mt-4 text-muted-foreground">
-              Purchase pre-configured Android TV devices ready to use with Hostary.
+              Pre-configured streaming devices that plug into any TV. Annual plans include free devices, or purchase separately.
             </p>
             <div className="mt-6">
               <span className="text-4xl font-bold">$59</span>
               <span className="text-muted-foreground"> per device</span>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
-              Includes free shipping within the US
+              Free shipping to the contiguous US
             </p>
             <Button className="mt-6" variant="outline" asChild>
               <Link href={`${SITE_CONFIG.appUrl}/billing`}>
@@ -212,7 +212,7 @@ export default function PricingPage() {
             Ready to transform your guest experience?
           </h2>
           <p className="mt-4 text-primary-foreground/80">
-            Start your 14-day free trial. No credit card required.
+            Free device with annual plans. Cancel anytime.
           </p>
           <Button
             size="lg"
@@ -220,7 +220,7 @@ export default function PricingPage() {
             className="mt-8 bg-white text-primary hover:bg-white/90"
             asChild
           >
-            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Start Free Trial</Link>
+            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
           </Button>
         </div>
       </section>

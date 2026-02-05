@@ -14,6 +14,7 @@ import {
   ArrowRight,
   CheckCircle2,
   Monitor,
+  ShieldCheck,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -35,7 +36,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
             <div className="flex flex-col justify-center">
               <Badge variant="secondary" className="mb-4 w-fit">
-                14-day free trial - No credit card required
+                Free device with annual plans - Cancel anytime
               </Badge>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Turn Your Guest TV Into a{" "}
@@ -49,7 +50,7 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" asChild>
                   <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                    Start Free Trial
+                    Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -60,7 +61,7 @@ export default function Home() {
               <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  Free setup
+                  Free shipping
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -111,9 +112,35 @@ export default function Home() {
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Guests struggle to connect to WiFi, miss your house rules, and
-              never discover the best local spots. Hostary transforms any
-              Android TV into a personalized guest concierge.
+              never discover the best local spots. Hostary transforms your
+              TV into a personalized guest concierge.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Streaming Reset Callout */}
+      <section className="border-y bg-gradient-to-r from-green-50 to-emerald-50 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-100">
+                <ShieldCheck className="h-6 w-6 text-green-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">
+                  No More Forgotten Netflix Logins
+                </h3>
+                <p className="mt-1 text-muted-foreground">
+                  Streaming apps automatically reset on guest checkout. All account
+                  data is cleared - no awkward calls, no privacy issues, no manual
+                  resets needed.
+                </p>
+              </div>
+            </div>
+            <Button variant="outline" className="shrink-0" asChild>
+              <Link href="/features#streaming">Learn More</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -182,15 +209,15 @@ export default function Home() {
               },
               {
                 step: "2",
-                title: "Pair the TV device",
+                title: "Connect your device",
                 description:
-                  "Install our app on any Android TV and enter the 6-digit pairing code. The device links to your property instantly.",
+                  "Get your Hostary device (free with annual plans), plug it into your TV, connect to WiFi, and enter the pairing code. Your guest dashboard appears instantly.",
               },
               {
                 step: "3",
-                title: "Guests enjoy the experience",
+                title: "Guests arrive to a welcome",
                 description:
-                  "Guests see a personalized welcome on arrival with instant WiFi access, local tips, and everything they need.",
+                  "Guests see a personalized greeting, scan to connect to WiFi, browse local recommendations, and access their favorite streaming apps.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -237,7 +264,7 @@ export default function Home() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
               Join property managers who are transforming how guests experience
-              their vacation rentals. Start your 14-day free trial today.
+              their vacation rentals.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
@@ -247,7 +274,7 @@ export default function Home() {
                 asChild
               >
                 <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                  Start Free Trial
+                  Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

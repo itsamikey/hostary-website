@@ -45,7 +45,7 @@ export function Header() {
             <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
           </Button>
           <Button asChild>
-            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Start Free Trial</Link>
+            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
           </Button>
         </div>
 
@@ -86,7 +86,7 @@ export function Header() {
               <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
             </Button>
             <Button asChild className="w-full">
-              <Link href={`${SITE_CONFIG.appUrl}/signup`}>Start Free Trial</Link>
+              <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
             </Button>
           </div>
         </div>

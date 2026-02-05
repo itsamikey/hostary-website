@@ -42,7 +42,7 @@ export default function FeaturesPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A complete guest communication platform built for vacation rentals.
-            Transform any Android TV into a personalized guest concierge.
+            Our plug-and-play device transforms your TV into a personalized guest concierge.
           </p>
         </div>
       </section>
@@ -179,8 +179,8 @@ export default function FeaturesPage() {
             See Hostary in Action
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
-            Start your 14-day free trial and transform how your guests
-            experience your property.
+            Transform how your guests experience your property.
+            Free device with annual plans.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -190,7 +190,7 @@ export default function FeaturesPage() {
               asChild
             >
               <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                Start Free Trial
+                Get Started
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: `${SITE_CONFIG.name} | ${SITE_CONFIG.description}`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
-  description: "Transform your vacation rental TV into a personalized guest hub. Welcome screens, WiFi QR codes, local recommendations, and streaming apps. 14-day free trial.",
+  description: "Transform your vacation rental TV into a personalized guest hub. Welcome screens, WiFi QR codes, local recommendations, and streaming apps.",
   keywords: ["vacation rental TV app", "Airbnb guest experience", "vacation rental welcome screen", "guest communication app", "property management TV"],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
