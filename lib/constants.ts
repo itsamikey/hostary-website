@@ -1,3 +1,6 @@
+// Flip to "live" when ready to accept signups
+export const LAUNCH_MODE: "waitlist" | "live" = "waitlist";
+
 export const SITE_CONFIG = {
   name: "Hostary",
   description: "Guest TV Experience for Vacation Rentals",
@@ -5,9 +8,17 @@ export const SITE_CONFIG = {
   appUrl: "https://app.hostary.app",
 };
 
+// Derived from LAUNCH_MODE — use these in components
+export const CTA = {
+  href: LAUNCH_MODE === "waitlist" ? "/waitlist" : `${SITE_CONFIG.appUrl}/signup`,
+  label: LAUNCH_MODE === "waitlist" ? "Join Waitlist" : "Get Started",
+  badge: LAUNCH_MODE === "waitlist" ? "Launching Soon - Join the Waitlist" : "Free device with annual plans - Cancel anytime",
+};
+
 export const NAV_LINKS = [
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Demo", href: "/demo" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -96,7 +107,7 @@ export const FEATURES = [
     description: "Greet every guest by name with custom welcome messages that appear on arrival.",
     icon: "Hand",
     details: [
-      "Guest name pulled from reservations",
+      "Set guest names from your reservation details",
       "Custom welcome messages per property",
       "Time-based greetings (Good morning/evening)",
       "Shows once per reservation, then transitions to home",

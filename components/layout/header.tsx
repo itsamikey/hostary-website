@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
+import { NAV_LINKS, SITE_CONFIG, CTA, LAUNCH_MODE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -15,13 +15,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex cursor-pointer items-center gap-2">
           <Image
             src="/hostary-logo-black.png"
             alt={SITE_CONFIG.name}
             width={120}
             height={32}
-            className="h-8 w-auto"
+            className="h-8 w-auto select-none"
             priority
           />
         </Link>
@@ -41,11 +41,13 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex md:items-center md:gap-4">
-          <Button variant="ghost" asChild>
-            <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
-          </Button>
+          {LAUNCH_MODE === "live" && (
+            <Button variant="ghost" asChild>
+              <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
+            </Button>
+          )}
           <Button asChild>
-            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
+            <Link href={CTA.href}>{CTA.label}</Link>
           </Button>
         </div>
 
@@ -82,11 +84,13 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-4 flex flex-col gap-2">
-            <Button variant="outline" asChild className="w-full">
-              <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
-            </Button>
+            {LAUNCH_MODE === "live" && (
+              <Button variant="outline" asChild className="w-full">
+                <Link href={`${SITE_CONFIG.appUrl}/login`}>Sign In</Link>
+              </Button>
+            )}
             <Button asChild className="w-full">
-              <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
+              <Link href={CTA.href}>{CTA.label}</Link>
             </Button>
           </div>
         </div>

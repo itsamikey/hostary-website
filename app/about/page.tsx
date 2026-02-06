@@ -7,7 +7,7 @@ import { Heart, Lightbulb, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about Hostary - built by vacation rental hosts to transform the guest experience through simple, thoughtful technology.",
+  description: "Learn about Hostary - born from real frustrations as a short-term rental guest, inspired by the hotel experience, and built to bring that same convenience to vacation rentals.",
 };
 
 export default function AboutPage() {
@@ -17,11 +17,11 @@ export default function AboutPage() {
       <section className="bg-gradient-to-b from-background to-muted/30 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Built for Hosts, By Hosts
+            Born from a Better Stay
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            We understand the vacation rental business because we&apos;ve lived it.
-            Hostary was born from real frustrations and a desire to do better for our guests.
+            Hostary was born from real frustrations as a short-term rental guest
+            and a simple question: why can&apos;t vacation rentals feel as seamless as hotels?
           </p>
         </div>
       </section>
@@ -44,25 +44,36 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold">Our Story</h2>
           <div className="mt-6 space-y-4 text-muted-foreground">
             <p>
-              Hostary started from a simple observation: guests were arriving at our
-              vacation rentals and immediately struggling. They couldn&apos;t find the WiFi
-              password. They didn&apos;t know the house rules. They had no idea where to eat
-              or what to do in the area.
+              Hostary started from a familiar frustration. Every time I stayed at a
+              short-term rental, the same problems came up: hunting for the WiFi
+              password, finding previous guests&apos; accounts still logged into Netflix
+              and Hulu, and having no easy way to know the house rules or what to
+              do in the area.
             </p>
             <p>
-              We tried printed guides, but they got lost or ignored. We tried messaging
-              apps, but guests didn&apos;t want another app cluttering their phones. The TV
-              was always on, but it was just showing generic content that added nothing
-              to their experience.
+              Meanwhile, hotels had figured this out. You check in, the TV welcomes
+              you, everything you need is right there. It&apos;s seamless. I kept
+              thinking: why doesn&apos;t this exist for vacation rentals?
             </p>
             <p>
-              That&apos;s when we realized: the TV could be so much more. It could greet
-              guests by name, connect them to WiFi with a single scan, show them the best
-              local restaurants, and give them everything they need to enjoy their stay.
+              When I started talking to hosts, I realized they were feeling the
+              other side of the same problem. They were fielding the same
+              questions over and over — WiFi passwords, check-out instructions,
+              local recommendations — and spending hours on printed guides that
+              guests never read. They wanted to deliver a great experience but
+              didn&apos;t have the right tools.
             </p>
             <p>
-              We built Hostary to solve our own problem, and now we&apos;re helping hosts
-              around the world transform their guest experience.
+              Combining my experience as a guest with what hosts were struggling
+              with, the solution became clear. The TV is already in the rental — it
+              just needs to work smarter. It can greet guests by name, connect
+              them to WiFi with a single scan, show them the best local spots, and
+              give them everything they need to enjoy their stay.
+            </p>
+            <p>
+              That&apos;s how Hostary was born — built to bring hotel-level
+              convenience to the short-term rental market, solving the problem
+              for both sides of the stay.
             </p>
           </div>
         </div>

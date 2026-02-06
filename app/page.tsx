@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SITE_CONFIG, FEATURES } from "@/lib/constants";
+import { FEATURES, CTA } from "@/lib/constants";
 import {
   Hand,
   Wifi,
@@ -31,72 +31,47 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30 py-20 sm:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
-            <div className="flex flex-col justify-center">
-              <Badge variant="secondary" className="mb-4 w-fit">
-                Free device with annual plans - Cancel anytime
-              </Badge>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                Turn Your Guest TV Into a{" "}
-                <span className="text-primary">Welcome Experience</span>
-              </h1>
-              <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-                Personalized greetings, instant WiFi, local recommendations, and
-                streaming apps - all on one screen. Delight your vacation rental
-                guests from the moment they arrive.
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild>
-                  <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/features">See How It Works</Link>
-                </Button>
-              </div>
-              <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  Free shipping
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  Cancel anytime
-                </div>
-              </div>
+      <section className="relative overflow-hidden py-20 sm:py-32">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-4">
+              {CTA.badge}
+            </Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Turn Your Guest TV Into a{" "}
+              <span className="text-emerald-400">Welcome Experience</span>
+            </h1>
+            <p className="mt-6 text-lg text-white/80 sm:text-xl">
+              Personalized greetings, instant WiFi, local recommendations, and
+              streaming apps - all on one screen. Delight your vacation rental
+              guests from the moment they arrive.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                <Link href={CTA.href}>
+                  {CTA.label}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10" asChild>
+                <Link href="/demo">Try the Demo</Link>
+              </Button>
             </div>
-            <div className="relative flex items-center justify-center lg:justify-end">
-              {/* TV Mockup */}
-              <div className="relative">
-                <div className="rounded-xl border-8 border-foreground/90 bg-foreground/90 p-2 shadow-2xl">
-                  <div className="aspect-video w-full max-w-lg overflow-hidden rounded bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
-                    <div className="flex h-full flex-col items-center justify-center p-8 text-white">
-                      <p className="text-lg opacity-80">Welcome</p>
-                      <p className="mt-2 text-3xl font-bold">Sarah & Mike</p>
-                      <p className="mt-4 text-sm opacity-60">
-                        Your stay begins now
-                      </p>
-                      <div className="mt-8 flex gap-4">
-                        <div className="rounded-lg bg-white/10 p-3 backdrop-blur">
-                          <Wifi className="h-6 w-6" />
-                        </div>
-                        <div className="rounded-lg bg-white/10 p-3 backdrop-blur">
-                          <CloudSun className="h-6 w-6" />
-                        </div>
-                        <div className="rounded-lg bg-white/10 p-3 backdrop-blur">
-                          <MapPin className="h-6 w-6" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* TV Stand */}
-                <div className="mx-auto h-4 w-32 rounded-b-lg bg-foreground/90" />
-                <div className="mx-auto h-2 w-48 rounded-full bg-foreground/70" />
+            <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white/70">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                Free shipping
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                Cancel anytime
               </div>
             </div>
           </div>
@@ -273,18 +248,18 @@ export default function Home() {
                 className="bg-white text-primary hover:bg-white/90"
                 asChild
               >
-                <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                  Get Started
+                <Link href={CTA.href}>
+                  {CTA.label}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
                 asChild
               >
-                <Link href="/contact">Contact Sales</Link>
+                <Link href="/demo">Try the Demo</Link>
               </Button>
             </div>
           </div>

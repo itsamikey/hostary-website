@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { SITE_CONFIG, FEATURES } from "@/lib/constants";
+import { FEATURES, CTA } from "@/lib/constants";
 import {
   Hand,
   Wifi,
@@ -189,18 +189,18 @@ export default function FeaturesPage() {
               className="bg-white text-primary hover:bg-white/90"
               asChild
             >
-              <Link href={`${SITE_CONFIG.appUrl}/signup`}>
-                Get Started
+              <Link href={CTA.href}>
+                {CTA.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-white/30 bg-transparent text-white hover:bg-white/10"
               asChild
             >
-              <Link href="/contact">Request Demo</Link>
+              <Link href="/demo">Try the Demo</Link>
             </Button>
           </div>
         </div>

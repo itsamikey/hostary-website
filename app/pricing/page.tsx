@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SITE_CONFIG, PRICING_PLANS, FAQ_ITEMS } from "@/lib/constants";
+import { PRICING_PLANS, FAQ_ITEMS, CTA } from "@/lib/constants";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -131,11 +131,11 @@ export default function PricingPage() {
                     <Link
                       href={
                         plan.monthlyPrice
-                          ? `${SITE_CONFIG.appUrl}/signup?plan=${plan.name.toLowerCase()}`
+                          ? CTA.href
                           : "/contact"
                       }
                     >
-                      {plan.monthlyPrice ? "Get Started" : "Contact Sales"}
+                      {plan.monthlyPrice ? CTA.label : "Contact Sales"}
                     </Link>
                   </Button>
                 </CardFooter>
@@ -161,8 +161,8 @@ export default function PricingPage() {
               Free shipping to the contiguous US
             </p>
             <Button className="mt-6" variant="outline" asChild>
-              <Link href={`${SITE_CONFIG.appUrl}/billing`}>
-                Purchase Devices
+              <Link href={CTA.href}>
+                {CTA.label}
               </Link>
             </Button>
           </div>
@@ -214,14 +214,24 @@ export default function PricingPage() {
           <p className="mt-4 text-primary-foreground/80">
             Free device with annual plans. Cancel anytime.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="mt-8 bg-white text-primary hover:bg-white/90"
-            asChild
-          >
-            <Link href={`${SITE_CONFIG.appUrl}/signup`}>Get Started</Link>
-          </Button>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white text-primary hover:bg-white/90"
+              asChild
+            >
+              <Link href={CTA.href}>{CTA.label}</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 bg-transparent text-white hover:bg-white/10"
+              asChild
+            >
+              <Link href="/demo">Try the Demo</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
