@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         // Change "from" to noreply@hostary.app once domain is verified in Resend
         from: "Hostary Contact <onboarding@resend.dev>",
-        to: "support@hostary.app",
+        to: "mike@unomi.net",
         reply_to: email,
         subject: `[Hostary] ${inquiryLabels[type] || "Contact"} from ${name}`,
         html: `
