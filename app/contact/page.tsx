@@ -7,11 +7,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { SITE_CONFIG } from "@/lib/constants";
-import { Mail, MessageSquare, Building2, CheckCircle2 } from "lucide-react";
+
+import { MessageSquare, Building2, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [honeypot, setHoneypot] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,9 +26,23 @@ export default function ContactPage() {
     e.preventDefault();
     setFormState("loading");
 
-    // Simulate form submission - replace with actual API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setFormState("success");
+    try {
+      if (honeypot) {
+        setFormState("success");
+        return;
+      }
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+      setFormState("success");
+    } catch {
+      setFormState("error");
+    }
   };
 
   if (formState === "success") {
@@ -79,6 +94,17 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot — hidden from humans, bots fill it in */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="absolute -left-[9999px] opacity-0 h-0 w-0"
+                    aria-hidden="true"
+                  />
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
@@ -183,21 +209,6 @@ export default function ContactPage() {
                 <div className="mt-6 space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <a
-                        href="mailto:support@hostary.app"
-                        className="text-muted-foreground hover:text-foreground"
-                      >
-                        support@hostary.app
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <MessageSquare className="h-5 w-5 text-primary" />
                     </div>
                     <div>
@@ -220,15 +231,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Managing 10+ Properties?</h3>
                       <p className="mt-1 text-sm text-muted-foreground">
-                        Contact our sales team for custom solutions, volume
-                        discounts, and white-label options.
+                        Select &quot;Enterprise/Scale Plan&quot; in the inquiry type above
+                        for custom solutions, volume discounts, and white-label options.
                       </p>
-                      <a
-                        href="mailto:sales@hostary.app"
-                        className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
-                      >
-                        sales@hostary.app
-                      </a>
                     </div>
                   </div>
                 </CardContent>

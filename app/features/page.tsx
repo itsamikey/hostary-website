@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,6 +30,16 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Tv,
   CloudSun,
   LayoutDashboard,
+};
+
+const screenshotMap: Record<string, { src: string; alt: string }> = {
+  welcome: { src: "/screenshots/welcome-screen.png", alt: "Personalized guest welcome screen" },
+  management: { src: "/screenshots/dashboard-properties.png", alt: "Multi-property management dashboard" },
+  info: { src: "/screenshots/property-information.png", alt: "Property information cards for guests" },
+  recommendations: { src: "/screenshots/local-recommendations.png", alt: "Local dining and activity recommendations" },
+  streaming: { src: "/screenshots/streaming-apps.png", alt: "Streaming apps with auto-reset between guests" },
+  wifi: { src: "/screenshots/wifi-qr-code.png", alt: "WiFi QR code for instant guest connection" },
+  weather: { src: "/screenshots/weather-3day.png", alt: "3-day weather forecast display" },
 };
 
 export default function FeaturesPage() {
@@ -95,16 +106,26 @@ export default function FeaturesPage() {
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <Card className="w-full max-w-md overflow-hidden">
-                    <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                      <div className="text-center text-muted-foreground">
-                        <Icon className="mx-auto h-16 w-16 opacity-50" />
-                        <p className="mt-4 text-sm">
-                          Screenshot placeholder for {feature.title}
-                        </p>
+                  {screenshotMap[feature.id] ? (
+                    <Card className="w-full overflow-hidden">
+                      <Image
+                        src={screenshotMap[feature.id].src}
+                        alt={screenshotMap[feature.id].alt}
+                        width={1363}
+                        height={758}
+                        className="w-full h-auto"
+                      />
+                    </Card>
+                  ) : (
+                    <Card className="w-full max-w-md overflow-hidden">
+                      <div className="aspect-video bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
+                        <div className="text-center text-muted-foreground">
+                          <Icon className="mx-auto h-16 w-16 opacity-50" />
+                          <p className="mt-4 text-sm">Coming soon</p>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
+                    </Card>
+                  )}
                 </div>
               </div>
             </div>
