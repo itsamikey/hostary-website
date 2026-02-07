@@ -202,7 +202,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "How do I set up a device?",
-    answer: "Plug the Hostary device into your TV, connect it to your property's WiFi, and enter the 6-digit pairing code shown on screen into your admin dashboard. The device links to your property instantly and displays your guest dashboard.",
+    answer: "Plug the Hostary device into your TV, connect it to your property's WiFi, and enter the 8-character pairing code shown on screen into your admin dashboard. The device links to your property instantly and displays your guest dashboard.",
   },
   {
     question: "Can I cancel anytime?",

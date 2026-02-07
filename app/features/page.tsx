@@ -157,7 +157,7 @@ export default function FeaturesPage() {
               },
               {
                 title: "Easy Device Pairing",
-                description: "Simple 6-digit codes for instant setup",
+                description: "Simple 8-character codes for instant setup",
               },
               {
                 title: "Reservation Tracking",
