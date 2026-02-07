@@ -191,6 +191,12 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {formState === "error" && (
+                    <p className="text-sm text-red-600">
+                      Something went wrong. Please try again or email us directly.
+                    </p>
+                  )}
+
                   <Button
                     type="submit"
                     className="w-full"
